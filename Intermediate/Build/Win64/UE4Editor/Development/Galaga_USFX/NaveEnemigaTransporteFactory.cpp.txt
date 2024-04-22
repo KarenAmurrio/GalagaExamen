@@ -1,0 +1,9 @@
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaTransporteFactory.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaFactory.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaFactory.generated.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaTransporteFactory.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaTransporte.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaTransporte.generated.h
