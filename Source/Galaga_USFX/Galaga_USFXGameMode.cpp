@@ -7,6 +7,9 @@
 #include "NaveEnemigaCaza.h"
 #include "NaveEnemigaCazaFactory.h"
 #include "NaveEnemigaTransporteFactory.h"
+#include "NaveAliadaEnfermeraBuilder.h"
+#include "NaveAliadaArmeriaBuilder.h"
+#include "DirectorNave.h"
 #include "NaveEnemigaFactory.h"
 
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
@@ -22,6 +25,15 @@ void AGalaga_USFXGameMode::BeginPlay()
 	FVector ubicacionInicioNavesEnemigasCaza = FVector(500.0f, 10.0f, 200.0f);
 	FVector ubicacionInicioNavesEnemigasTransporte = FVector(500.0f, 500.0f, 250.0f);
 
+	/*EnfermeraBuilder = GetWorld()->SpawnActor<ANaveAliadaEnfermeraBuilder>(ANaveAliadaEnfermeraBuilder::StaticClass());
+	ArmeriaBuilder = GetWorld()->SpawnActor<ANaveAliadaArmeriaBuilder>(ANaveAliadaArmeriaBuilder::StaticClass());
+	DirectorNave = GetWorld()->SpawnActor<ADirectorNave>(ADirectorNave::StaticClass());
+
+	DirectorNave->SetNaveAliadaBuilder(EnfermeraBuilder);
+	DirectorNave->ConstruirNave();
+
+	ANaveAliada* NaveAliada = DirectorNave->GetNaveAliada();
+	NaveAliada->NaveAliadaCaracteristicas()*/;
 	//FVector ubicacionNave01 = FVector(-1000.0f, 500.0f, 250.0f);
 	//FVector ubicacionNave02 = FVector(-500.0f, -500.0f, 250.0f);
 
@@ -30,26 +42,11 @@ void AGalaga_USFXGameMode::BeginPlay()
 	UWorld* World = GetWorld();
 	if (World != nullptr)
 	{
-	//	ANaveEnemigaFactory* fabrica = World->SpawnActor<ANaveEnemigaCazaFactory>(ANaveEnemigaCazaFactory::StaticClass());
-		//ANaveEnemigaFactory* fabrica2 = World->SpawnActor<ANaveEnemigaTransporteFactory>(ANaveEnemigaTransporteFactory::StaticClass());
-//		ANaveEnemiga* naves;
-		//ANaveEnemiga* nave;
-
-		//nave = fabrica2->DesplegarNave("Transporte");
-
-
-		//for (int i = 0; i < 5; i++) {
-		//	FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + i * 300, ubicacionInicioNavesEnemigasCaza.Z);
-		//	ANaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<ANaveEnemigaCaza>(PosicionNaveActual, rotacionNave);
-
-		//	//TANavesEnemigasCaza.Push(NaveEnemigaCazaTemporal);
-		//	TANavesEnemigas.Push(NaveEnemigaCazaTemporal);
-		//}
-
+	
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 2; j++) {
 				FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasTransporte.X + j * 200, ubicacionInicioNavesEnemigasTransporte.Y + i * 300, ubicacionInicioNavesEnemigasTransporte.Z);
-				ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::DesplegarNave("Caza", World, PosicionNaveActual, FRotator::ZeroRotator);
+				ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
 			}
 		}
 
@@ -66,6 +63,19 @@ void AGalaga_USFXGameMode::BeginPlay()
 		//NaveEnemigaCaza01 = World->SpawnActor<ANaveEnemigaCaza>(ubicacionNave02, rotacionNave);
 
 		TiempoTranscurrido = 0;
+
+		DirectorNave = GetWorld()->SpawnActor<ADirectorNave>(ADirectorNave::StaticClass());
+		EnfermeraBuilder = GetWorld()->SpawnActor<ANaveAliadaEnfermeraBuilder>(ANaveAliadaEnfermeraBuilder::StaticClass());
+		DirectorNave->SetNaveAliadaBuilder(EnfermeraBuilder);
+		DirectorNave->ConstruirNave();
+		ArmeriaBuilder = GetWorld()->SpawnActor<ANaveAliadaArmeriaBuilder>(ANaveAliadaArmeriaBuilder::StaticClass());
+		DirectorNave->SetNaveAliadaBuilder(ArmeriaBuilder);
+		DirectorNave->ConstruirNave();
+
+		ANaveAliada* NaveAliada = DirectorNave->GetNaveAliada();
+		NaveAliada->NaveAliadaCaracteristicas();
+
+		
 	}
 
 	/*NaveEnemigaCaza01->SetPosicion(FVector(-500.0f, 500.0f, 200.0f));

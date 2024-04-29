@@ -29,6 +29,7 @@ public:
 	/** Offset from the ships location to spawn projectiles */
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite )
 	FVector GunOffset;
+	FVector GunOffset2;
 	
 	/* How fast the weapon will fire */
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
@@ -63,7 +64,6 @@ private:
 
 	/* Flag to control firing  */
 	uint32 bCanFire : 1;
-	void OnBoomerangDestroyed(AActor* DestroyedActor);
 
 	/** Handle for efficient management of ShotTimerExpired timer */
 	FTimerHandle TimerHandle_ShotTimerExpired;
@@ -75,7 +75,13 @@ public:
 	FORCEINLINE class UCameraComponent* GetCameraComponent() const { return CameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-
+	void NotifyActorBeginOverlap(AActor* OtherActor);
 	AProjectileBomerang* CurrentBoomerang;
+	void ModificarSalud(int cantidad);
+	void ActivarDisparoDoble(bool disparodobleActivar);
+
+private:
+	int salud;
+	bool disparodoble;
 };
 

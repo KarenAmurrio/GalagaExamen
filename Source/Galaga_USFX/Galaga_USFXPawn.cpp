@@ -2,6 +2,7 @@
 #include "Galaga_USFXPawn.h"
 #include "Galaga_USFXProjectile.h"
 #include "ProjectileBomerang.h"
+#include "Galaga_USFXGameMode.h"
 #include "TimerManager.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Camera/CameraComponent.h"
@@ -10,6 +11,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Engine/CollisionProfile.h"
 #include "Engine/StaticMesh.h"
+#include "Engine/Engine.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
 
@@ -20,7 +22,7 @@ const FName AGalaga_USFXPawn::FireRightBinding("FireRight");
 
 AGalaga_USFXPawn::AGalaga_USFXPawn()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/nave/d5f7f45338c9_space_ship__3d_asse.d5f7f45338c9_space_ship__3d_asse'"));
 	// Create the mesh component
 	ShipMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	RootComponent = ShipMeshComponent;
@@ -48,8 +50,11 @@ AGalaga_USFXPawn::AGalaga_USFXPawn()
 	MoveSpeed = 1000.0f;
 	// Weapon
 	GunOffset = FVector(90.f, 0.f, 0.f);
+	GunOffset2 = FVector(90.f, 90.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+	disparodoble = false;
+	
 }
 
 void AGalaga_USFXPawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -97,6 +102,8 @@ void AGalaga_USFXPawn::Tick(float DeltaSeconds)
 
 	// Try and fire a shot
 	FireShot(FireDirection);
+	FString Mensaje = FString::Printf(TEXT("Vida Actual: %d"), salud);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, Mensaje);
 }
 
 void AGalaga_USFXPawn::FireShot(FVector FireDirection)
@@ -108,12 +115,25 @@ void AGalaga_USFXPawn::FireShot(FVector FireDirection)
 		{
 			const FRotator FireRotation = FireDirection.Rotation();
 			const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
+			const FVector SpawnLocation2 = GetActorLocation() + FireRotation.RotateVector(GunOffset2);
 
 			UWorld* const World = GetWorld();
 			if (World != nullptr)
 			{
 				// Spawn the projectile
-				World->SpawnActor<AProjectileBomerang>(SpawnLocation, FireRotation);
+				//World->SpawnActor<AProjectileBomerang>(SpawnLocation, FireRotation);
+				World->SpawnActor<AGalaga_USFXProjectile>(SpawnLocation, FireRotation);
+
+				if (disparodoble)
+				{
+
+					if (World != nullptr)
+					{
+						
+						World->SpawnActor<AGalaga_USFXProjectile>(SpawnLocation2, FireRotation);
+						//World->SpawnActor<AProjectileBomerang>(SpawnLocation2, FireRotation);
+					}
+				}
 
 				// Start the shot timer
 				World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AGalaga_USFXPawn::ShotTimerExpired, FireRate);
@@ -150,4 +170,18 @@ void AGalaga_USFXPawn::FireShot(FVector FireDirection)
 void AGalaga_USFXPawn::ShotTimerExpired()
 {
 	bCanFire = true;
+}
+
+void AGalaga_USFXPawn::NotifyActorBeginOverlap(AActor* OtherActor)
+{
+}
+
+void AGalaga_USFXPawn::ModificarSalud(int cantidad)
+{
+	salud = salud + cantidad;
+}
+
+void AGalaga_USFXPawn::ActivarDisparoDoble(bool disparodobleActivar)
+{
+	disparodoble = disparodobleActivar;
 }

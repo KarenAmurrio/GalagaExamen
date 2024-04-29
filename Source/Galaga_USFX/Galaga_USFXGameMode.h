@@ -11,6 +11,9 @@
 class ANaveEnemiga;
 class ANaveEnemigaTransporte;
 class ANaveEnemigaCaza;
+class ANaveAliadaEnfermeraBuilder;
+class ANaveAliadaArmeriaBuilder;
+class ADirectorNave;
 
 UCLASS(MinimalAPI)
 class AGalaga_USFXGameMode : public AGameModeBase
@@ -24,6 +27,11 @@ public:
 	//ANaveEnemiga* NaveEnemiga01;
 	ANaveEnemigaTransporte* NaveEnemigaTransporte01;
 	ANaveEnemigaCaza* NaveEnemigaCaza01;
+	ANaveAliadaEnfermeraBuilder* EnfermeraBuilder;
+	ANaveAliadaArmeriaBuilder* ArmeriaBuilder;
+	ADirectorNave* DirectorNave;
+
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

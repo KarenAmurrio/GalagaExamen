@@ -9,7 +9,7 @@
 ANaveEnemiga* ANaveEnemigaCazaFactory::DesplegarNave(FString tipo, UWorld* World, FVector SpawnLocation, FRotator SpawnRotation)
 {
 
-    if (tipo == "Caza")
+    if (tipo == "CazaComun")
     {
         return World->SpawnActor<ANaveEnemigaCaza>(SpawnLocation, SpawnRotation);
     }
