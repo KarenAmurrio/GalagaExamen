@@ -7,13 +7,15 @@
 #include "Galaga_USFXGameMode.generated.h"
 
 
-
 class ANaveEnemiga;
 class ANaveEnemigaTransporte;
 class ANaveEnemigaCaza;
 class ANaveAliadaEnfermeraBuilder;
 class ANaveAliadaArmeriaBuilder;
 class ADirectorNave;
+class AAliadosBaseBuilder;
+class ADirectorAliadas;
+class AAliadosCampoBuilder;
 
 UCLASS(MinimalAPI)
 class AGalaga_USFXGameMode : public AGameModeBase
@@ -30,6 +32,10 @@ public:
 	ANaveAliadaEnfermeraBuilder* EnfermeraBuilder;
 	ANaveAliadaArmeriaBuilder* ArmeriaBuilder;
 	ADirectorNave* DirectorNave;
+	AAliadosBaseBuilder* AliadosBaseBuilder;
+	AAliadosCampoBuilder* AliadosCampoBuilder;
+	//*******************************************************
+	ADirectorAliadas* DirectorAliadas;
 
 
 protected:
@@ -40,6 +46,14 @@ public:
 	TArray<ANaveEnemiga*> TANavesEnemigas;
 	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
 	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
+	int cantidadNavesEnemigas;
+	void campamento();
+	void nivel();
+	FTimerHandle TimerHandle_Campamento;
+	FTimerHandle TimerHandle_Nivel;
+	FORCEINLINE int GetCantidadNavesEnemigas() { return cantidadNavesEnemigas; }
+
+	FORCEINLINE void SetCantidadNavesEnemigas(int _cantidad) { cantidadNavesEnemigas = _cantidad; }
 
 private:
 	int TiempoTranscurrido;

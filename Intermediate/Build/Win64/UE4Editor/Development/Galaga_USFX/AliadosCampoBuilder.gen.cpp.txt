@@ -1,0 +1,9 @@
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/AliadosCampoBuilder.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\AliadosBuilder.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\AliadosBuilder.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\Aliados.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Aliados.generated.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\AliadosCampoBuilder.generated.h

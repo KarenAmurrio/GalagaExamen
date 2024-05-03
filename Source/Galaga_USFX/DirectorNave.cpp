@@ -27,16 +27,16 @@ void ADirectorNave::Tick(float DeltaTime)
 
 void ADirectorNave::ConstruirNave()
 {
-	NaveAliadaBuilder->BuiltMotor();
-	NaveAliadaBuilder->BuiltArma();
-	NaveAliadaBuilder->BuiltEstructura();
-	NaveAliadaBuilder->BuiltMejora();
+	//NaveAliadaBuilder->BuiltMotor();
+	//NaveAliadaBuilder->BuiltArma();
+	//NaveAliadaBuilder->BuiltEstructura();
+	//NaveAliadaBuilder->BuiltMejora();
 
 }
 
 void ADirectorNave::SetNaveAliadaBuilder(AActor* Builder)
 {
-	NaveAliadaBuilder = Cast<INaveAliadaBuilder>(Builder);
+//	NaveAliadaBuilder = Cast<INaveAliadaBuilder>(Builder);
 }
 
 ANaveAliada* ADirectorNave::GetNaveAliada()

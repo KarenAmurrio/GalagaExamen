@@ -4,10 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "NaveAliadaBuilder.h"
 #include "DirectorNave.generated.h"
 
-class INaveAliadaBuilder;
 class ANaveAliada;
 
 UCLASS()
@@ -18,7 +16,6 @@ class GALAGA_USFX_API ADirectorNave : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ADirectorNave();
-	INaveAliadaBuilder* NaveAliadaBuilder;
 
 protected:
 	// Called when the game starts or when spawned

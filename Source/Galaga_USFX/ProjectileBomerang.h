@@ -65,4 +65,6 @@ private:
 
 	// Función para hacer que el proyectil regrese a su posición inicial
 	void ReturnToPawn();
+
+	int enemigos;
 };

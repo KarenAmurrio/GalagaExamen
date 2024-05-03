@@ -59,5 +59,6 @@ void ANaveEnemigaCaza::FuncionDeManejoDeColision(UPrimitiveComponent* HitCompone
 	{
 		// Destruir la nave enemiga
 		Destroy();
+
 	}
 }

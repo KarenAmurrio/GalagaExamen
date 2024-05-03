@@ -79,9 +79,19 @@ public:
 	AProjectileBomerang* CurrentBoomerang;
 	void ModificarSalud(int cantidad);
 	void ActivarDisparoDoble(bool disparodobleActivar);
+	void ActivarDisparoBomerang(bool disparoBomerangActivar);
+	void cobrarCreditos(int monto);
+	FORCEINLINE int GetSalud() const { return salud; }
+	FORCEINLINE bool GetDisparoDoble() const { return disparodoble; }
+	FORCEINLINE int GetCreditos() const { return creditos; }
+	FORCEINLINE bool GetDisparoBomerang() const { return disparoBomerang; }
+	
 
 private:
 	int salud;
 	bool disparodoble;
+	int creditos;
+	bool disparoBomerang;
+
 };
 

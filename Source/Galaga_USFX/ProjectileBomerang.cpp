@@ -57,9 +57,13 @@ void AProjectileBomerang::NotifyActorBeginOverlap(AActor* OtherActor)
 
 
     ANaveEnemigaCaza* EnemyShip = Cast<ANaveEnemigaCaza>(OtherActor);
+    AGalaga_USFXGameMode* GameMode = Cast<AGalaga_USFXGameMode>(UGameplayStatics::GetGameMode(this));
     if (EnemyShip)
     {
         EnemyShip->Destroy();
+        enemigos = GameMode->GetCantidadNavesEnemigas();
+        enemigos--;
+        GameMode->SetCantidadNavesEnemigas(enemigos);
 
     }
 

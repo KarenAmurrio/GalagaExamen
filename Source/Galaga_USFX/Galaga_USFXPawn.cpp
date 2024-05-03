@@ -14,6 +14,7 @@
 #include "Engine/Engine.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
+#include "Engine/Canvas.h"
 
 const FName AGalaga_USFXPawn::MoveForwardBinding("MoveForward");
 const FName AGalaga_USFXPawn::MoveRightBinding("MoveRight");
@@ -54,6 +55,7 @@ AGalaga_USFXPawn::AGalaga_USFXPawn()
 	FireRate = 0.1f;
 	bCanFire = true;
 	disparodoble = false;
+	creditos = 1000;
 	
 }
 
@@ -102,8 +104,6 @@ void AGalaga_USFXPawn::Tick(float DeltaSeconds)
 
 	// Try and fire a shot
 	FireShot(FireDirection);
-	FString Mensaje = FString::Printf(TEXT("Vida Actual: %d"), salud);
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, Mensaje);
 }
 
 void AGalaga_USFXPawn::FireShot(FVector FireDirection)
@@ -118,10 +118,12 @@ void AGalaga_USFXPawn::FireShot(FVector FireDirection)
 			const FVector SpawnLocation2 = GetActorLocation() + FireRotation.RotateVector(GunOffset2);
 
 			UWorld* const World = GetWorld();
+
 			if (World != nullptr)
 			{
 				// Spawn the projectile
 				//World->SpawnActor<AProjectileBomerang>(SpawnLocation, FireRotation);
+				if(!disparoBomerang && !disparodoble)
 				World->SpawnActor<AGalaga_USFXProjectile>(SpawnLocation, FireRotation);
 
 				if (disparodoble)
@@ -129,12 +131,19 @@ void AGalaga_USFXPawn::FireShot(FVector FireDirection)
 
 					if (World != nullptr)
 					{
-						
+						World->SpawnActor<AGalaga_USFXProjectile>(SpawnLocation, FireRotation);
 						World->SpawnActor<AGalaga_USFXProjectile>(SpawnLocation2, FireRotation);
 						//World->SpawnActor<AProjectileBomerang>(SpawnLocation2, FireRotation);
 					}
 				}
 
+				if(disparoBomerang)
+				{
+					if (World != nullptr)
+					{
+						World->SpawnActor<AProjectileBomerang>(SpawnLocation2, FireRotation);
+					}
+				}
 				// Start the shot timer
 				World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AGalaga_USFXPawn::ShotTimerExpired, FireRate);
 
@@ -149,7 +158,9 @@ void AGalaga_USFXPawn::FireShot(FVector FireDirection)
 			bCanFire = false;
 		}
 	}
-		/*	if (FireDirection.SizeSquared() > 0.0f)
+
+	/*if (disparoBomerang) {
+		if (FireDirection.SizeSquared() > 0.0f)
 			{
 				const FRotator FireRotation = FireDirection.Rotation();
 				const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
@@ -163,7 +174,9 @@ void AGalaga_USFXPawn::FireShot(FVector FireDirection)
 						CurrentBoomerang->OnDestroyed.AddDynamic(this, &AGalaga_USFXPawn::OnBoomerangDestroyed);
 					}
 				}
-			}*/
+		}
+
+	}*/
 
 }
 
@@ -179,9 +192,25 @@ void AGalaga_USFXPawn::NotifyActorBeginOverlap(AActor* OtherActor)
 void AGalaga_USFXPawn::ModificarSalud(int cantidad)
 {
 	salud = salud + cantidad;
+	FString Message2 = FString::Printf(TEXT("Vida: %d"), salud);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, Message2);
+
 }
 
 void AGalaga_USFXPawn::ActivarDisparoDoble(bool disparodobleActivar)
 {
 	disparodoble = disparodobleActivar;
 }
+
+void AGalaga_USFXPawn::ActivarDisparoBomerang(bool disparoBomerangActivar)
+{
+	disparoBomerang = disparoBomerangActivar;
+}
+
+void AGalaga_USFXPawn::cobrarCreditos(int monto)
+{
+	creditos = creditos + monto;
+	FString Message1 = FString::Printf(TEXT("Creditos: %d"), creditos);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, Message1);
+}
+

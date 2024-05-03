@@ -18,7 +18,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveAliada() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX();
 	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
-	GALAGA_USFX_API UClass* Z_Construct_UClass_UNaveAliadaPlano_NoRegister();
 // End Cross Module References
 	void ANaveAliada::StaticRegisterNativesANaveAliada()
 	{
@@ -38,7 +37,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveAliada() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ColisionNaveAliada;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
-		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -63,9 +61,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveAliada() {}
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANaveAliada_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveAliada_Statics::NewProp_ColisionNaveAliada,
 	};
-		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ANaveAliada_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UNaveAliadaPlano_NoRegister, (int32)VTABLE_OFFSET(ANaveAliada, INaveAliadaPlano), false },
-		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANaveAliada_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANaveAliada>::IsAbstract,
 	};
@@ -76,11 +71,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveAliada() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_ANaveAliada_Statics::PropPointers,
-		InterfaceParams,
+		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_ANaveAliada_Statics::PropPointers),
-		UE_ARRAY_COUNT(InterfaceParams),
+		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ANaveAliada_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveAliada_Statics::Class_MetaDataParams))
 	};
@@ -93,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveAliada() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveAliada, 310466895);
+	IMPLEMENT_CLASS(ANaveAliada, 3109019512);
 	template<> GALAGA_USFX_API UClass* StaticClass<ANaveAliada>()
 	{
 		return ANaveAliada::StaticClass();

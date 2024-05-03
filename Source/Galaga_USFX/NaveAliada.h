@@ -3,11 +3,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "NaveAliadaPlano.h"
 #include "NaveAliada.generated.h"
 
 UCLASS()
-class GALAGA_USFX_API ANaveAliada : public AActor, public INaveAliadaPlano
+class GALAGA_USFX_API ANaveAliada : public AActor
 {
     GENERATED_BODY()
 

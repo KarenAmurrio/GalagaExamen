@@ -6,6 +6,10 @@
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Engine/StaticMesh.h"
+#include "Components/CapsuleComponent.h"
+#include "NaveEnemigaCaza.h"
+#include "Galaga_USFXGameMode.h"
+
 
 AGalaga_USFXProjectile::AGalaga_USFXProjectile() 
 {
@@ -32,6 +36,10 @@ AGalaga_USFXProjectile::AGalaga_USFXProjectile()
 	// Die after 3 seconds by default
 	InitialLifeSpan = 3.0f;
 
+	BomerangCollision = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Colision_Bomerang"));
+	BomerangCollision->SetupAttachment(RootComponent);
+	BomerangCollision->InitCapsuleSize(50.f, 100.f);
+
 }
 
 void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
@@ -43,4 +51,21 @@ void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 	}
 
 	Destroy();
+}
+
+void AGalaga_USFXProjectile::NotifyActorBeginOverlap(AActor* OtherActor)
+{
+	Super::AActor::NotifyActorBeginOverlap(OtherActor);
+
+
+	ANaveEnemigaCaza* EnemyShip = Cast<ANaveEnemigaCaza>(OtherActor);
+	AGalaga_USFXGameMode* GameMode = Cast<AGalaga_USFXGameMode>(GetWorld()->GetAuthGameMode());
+
+	if (EnemyShip)
+	{
+		EnemyShip->Destroy();
+		enemigos = GameMode->GetCantidadNavesEnemigas();
+		enemigos--;
+		GameMode->SetCantidadNavesEnemigas(enemigos);
+	}
 }
