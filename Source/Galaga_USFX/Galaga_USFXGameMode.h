@@ -55,6 +55,9 @@ public:
 
 	FORCEINLINE void SetCantidadNavesEnemigas(int _cantidad) { cantidadNavesEnemigas = _cantidad; }
 
+	class AAliados* Nivel;
+	class AAliados* Campamento;
+
 private:
 	int TiempoTranscurrido;
 
@@ -62,6 +65,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(VisibleAnywhere, Category = "Game Mode")
+	class AAdaptadorExtranjero* adapter;
+
+	UPROPERTY(VisibleAnywhere, Category = "Game Mode")
+	class AGalaga_USFXPawn* jugador;
 };
 
 

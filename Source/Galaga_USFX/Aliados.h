@@ -22,20 +22,22 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void setNaveEnfermera(FVector _posicionEnfermera, FVector _posicionEnfermera2);
-	void setNaveMecanico(FVector _posicionMecanico, FVector _posicionMecanico2);
-	void setNaveArmeria(FVector _posicionArmeria, FVector _posicionArmeria2);
+
+	class ANaveArmeriaDoble* NaveArmeriaDoble;
+	class ANaveEnfermeraSimple* NaveEnfermeraSimple;
+	class ANaveArmeriaBomerang* NaveArmeriaBomerang;
+	class ANaveEnfermeraTotal* NaveEnfermeraTotal;
+
+
+	void destruirAliados();
 
 private:
+
+
 	FVector posicionEnfermera;
 	FVector posicionMecanico;
 	FVector posicionArmeria;
 	FVector posicionEnfermera2;
 	FVector posicionMecanico2;
 	FVector posicionArmeria2;
-
-	class ANaveArmeriaDoble* NaveArmeria;
-	class ANaveEnfermeraSimple* NaveEnfermera;
-	class ANaveArmeriaBomerang* NaveArmeria2;
-	class ANaveEnfermeraTotal* NaveEnfermera2;
 };

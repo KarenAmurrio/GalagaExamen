@@ -3,6 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "NaveEnfermera.h"
+#include "NaveMecanico.h"
+#include "NaveArmeria.h"
+#include "NaveEnfermeraSimple.h"
+#include "NaveEnfermeraTotal.h"
+#include "NaveArmeriaDoble.h"
+#include "NaveArmeriaBomerang.h"
 #include "UObject/Interface.h"
 #include "AliadosBuilder.generated.h"
 
@@ -21,10 +28,10 @@ class GALAGA_USFX_API IAliadosBuilder
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 
-	virtual void BuildEnfermera() = 0;
-	virtual void BuildMecanico() = 0;
-	virtual void BuildArmeria() = 0;
-	virtual void destruir() = 0;
-	virtual class AAliados* GetAliados() = 0;
+	virtual ANaveEnfermeraSimple* BuildEnfermeraSimple() = 0;
+	virtual ANaveEnfermeraTotal* BuildEnfermeraTotal() = 0;
+	virtual ANaveArmeriaDoble* BuildArmeriaDoble() = 0;
+	virtual ANaveArmeriaBomerang* BuildArmeriaBomerang() = 0;
+	//virtual void destruir() = 0;
 
 };

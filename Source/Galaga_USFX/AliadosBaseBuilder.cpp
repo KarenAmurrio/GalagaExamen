@@ -24,7 +24,6 @@ AAliadosBaseBuilder::AAliadosBaseBuilder()
 void AAliadosBaseBuilder::BeginPlay()
 {
 	Super::BeginPlay();
-	Aliados = GetWorld()->SpawnActor<AAliados>(AAliados::StaticClass());
 }
 
 // Called every frame
@@ -34,45 +33,38 @@ void AAliadosBaseBuilder::Tick(float DeltaTime)
 
 }
 
-void AAliadosBaseBuilder::BuildEnfermera()
+ANaveEnfermeraSimple* AAliadosBaseBuilder::BuildEnfermeraSimple()
 {
+	ANaveEnfermeraSimple* NaveEnfermeraSimple;
 	FVector Location = FVector(-200.f, 600.f, 219.f);
-	FVector Location2 = FVector(-200.f, 800.f, 219.f);
-	Aliados->setNaveEnfermera(Location,Location2);
-	/*FVector Location = FVector(-200.f, 600.f, 219.f);
-	NaveEnfermera = GetWorld()->SpawnActor<ANaveEnfermeraSimple>(Location, FRotator::ZeroRotator);
-	FVector Location2 = FVector(-200.f, 800.f, 219.f);
-	NaveEnfermera2 = GetWorld()->SpawnActor<ANaveEnfermeraTotal>(Location2, FRotator::ZeroRotator);*/
+	NaveEnfermeraSimple= GetWorld()->SpawnActor<ANaveEnfermeraSimple>(Location, FRotator::ZeroRotator);
+	return NaveEnfermeraSimple;
 }
 
-void AAliadosBaseBuilder::BuildMecanico()
+ANaveEnfermeraTotal* AAliadosBaseBuilder::BuildEnfermeraTotal()
 {
-	FVector Location = FVector(20.f, -200.f, 219.f);
-//	ANaveMecanico* NaveMecanico = GetWorld()->SpawnActor<ANaveMecanico>(Location, FRotator::ZeroRotator);
+	ANaveEnfermeraTotal* NaveEnfermeraTotal;
+	FVector Location= FVector(-200.f, 800.f, 219.f);
+	NaveEnfermeraTotal= GetWorld()->SpawnActor<ANaveEnfermeraTotal>(Location, FRotator::ZeroRotator);
+
+	return NaveEnfermeraTotal;
 }
 
-void AAliadosBaseBuilder::BuildArmeria()
+ANaveArmeriaDoble* AAliadosBaseBuilder::BuildArmeriaDoble()
 {
+	ANaveArmeriaDoble* NaveArmeriaDoble;
 	FVector Location = FVector(20.f, -400.f, 219.f);
-	FVector Location2 = FVector(20.f, -600.f, 219.f);
-	Aliados->setNaveArmeria(Location,Location2);
-	//FVector Location = FVector(20.f, -400.f, 219.f);
-	//NaveArmeria = GetWorld()->SpawnActor<ANaveArmeriaDoble>(Location, FRotator::ZeroRotator);
-	//FVector Location2 = FVector(20.f, -600.f, 219.f);
-	//NaveArmeria2 = GetWorld()->SpawnActor<ANaveArmeriaBomerang>(Location2, FRotator::ZeroRotator);
+	NaveArmeriaDoble= GetWorld()->SpawnActor<ANaveArmeriaDoble>(Location, FRotator::ZeroRotator);
+	return NaveArmeriaDoble;
 }
 
-void AAliadosBaseBuilder::destruir()
+ANaveArmeriaBomerang* AAliadosBaseBuilder::BuildArmeriaBomerang()
 {
-	NaveEnfermera->Destroy();
-	NaveEnfermera2->Destroy();
-	NaveArmeria->Destroy();
-	NaveArmeria2->Destroy();
+	ANaveArmeriaBomerang* NaveArmeriaBomerang;
+	FVector Location = FVector(20.f, -600.f, 219.f);
+	NaveArmeriaBomerang = GetWorld()->SpawnActor<ANaveArmeriaBomerang>(Location, FRotator::ZeroRotator);
+	return NaveArmeriaBomerang;
 }
 
-AAliados* AAliadosBaseBuilder::GetAliados()
-{
-	return Aliados;
-}
 
 

@@ -32,27 +32,11 @@ void AAliados::Tick(float DeltaTime)
 
 }
 
-void AAliados::setNaveEnfermera(FVector _posicionEnfermera,FVector _posicionEnfermera2)
+void AAliados::destruirAliados()
 {
-	posicionEnfermera=_posicionEnfermera;
-	posicionEnfermera2=_posicionEnfermera2;
-	NaveEnfermera = GetWorld()->SpawnActor<ANaveEnfermeraSimple>(posicionEnfermera, FRotator::ZeroRotator);
-	NaveEnfermera2 = GetWorld()->SpawnActor<ANaveEnfermeraTotal>(posicionEnfermera2, FRotator::ZeroRotator);
-
-}
-
-void AAliados::setNaveMecanico(FVector _posicionMecanico, FVector _posicionMecanico2)
-{
-	posicionMecanico = _posicionMecanico;
-	posicionMecanico2 = _posicionMecanico2;
-}
-
-
-void AAliados::setNaveArmeria(FVector _posicionArmeria, FVector _posicionArmeria2)
-{
-	posicionArmeria = _posicionArmeria;
-	posicionArmeria2 = _posicionArmeria2;
-	NaveArmeria = GetWorld()->SpawnActor<ANaveArmeriaDoble>(posicionArmeria, FRotator::ZeroRotator);
-	NaveArmeria2 = GetWorld()->SpawnActor<ANaveArmeriaBomerang>(posicionArmeria2, FRotator::ZeroRotator);
+	NaveEnfermeraSimple->Destroy();
+	NaveEnfermeraTotal->Destroy();
+	NaveArmeriaDoble->Destroy();
+	NaveArmeriaBomerang->Destroy();
 }
 

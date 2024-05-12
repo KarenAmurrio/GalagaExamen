@@ -2,6 +2,8 @@ E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galag
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\Galaga_USFXPawn.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileBomerang.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileBomerang.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\IBounce_Ball.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\IBounce_Ball.generated.h
 E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
 E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h

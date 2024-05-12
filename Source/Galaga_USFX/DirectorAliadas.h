@@ -25,8 +25,7 @@ public:
 	// Called every frame
 	IAliadosBuilder* AliadosBuilder;
 	virtual void Tick(float DeltaTime) override;
-	void Construct();
 	void SetAliadosBuilder(AActor* Builder);
-	void GetAliados();
-//	AAliados* Construct(IAliadosBuilder* Builder);
+	AAliados* GetAliados();
+	
 };

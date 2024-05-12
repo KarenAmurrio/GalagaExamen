@@ -25,13 +25,11 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime);
-	void BuildEnfermera()override;
-	void BuildMecanico()override;
-	void BuildArmeria()override;
-	void destruir() override;
-	virtual class AAliados* GetAliados() override;
-	AAliados* naveAliada;
-
+	ANaveEnfermeraSimple* BuildEnfermeraSimple() override;
+	ANaveEnfermeraTotal* BuildEnfermeraTotal() override;
+	ANaveArmeriaDoble* BuildArmeriaDoble() override;
+	ANaveArmeriaBomerang* BuildArmeriaBomerang() override;
+	class AAliados* Aliados;
 
 	class ANaveArmeriaDoble* NaveArmeria;
 	class ANaveEnfermeraSimple* NaveEnfermera;

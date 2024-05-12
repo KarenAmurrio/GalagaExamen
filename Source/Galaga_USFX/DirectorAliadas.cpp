@@ -2,6 +2,7 @@
 
 
 #include "DirectorAliadas.h"
+#include "Aliados.h"
 
 // Sets default values
 ADirectorAliadas::ADirectorAliadas()
@@ -25,42 +26,18 @@ void ADirectorAliadas::Tick(float DeltaTime)
 
 }
 
-void ADirectorAliadas::Construct()
-{
-	/*if (Builder != nullptr)
-	{
-		Builder->BuildEnfermera();
-		Builder->BuildMecanico();
-		Builder->BuildArmeria();
-	}*/
-	if (AliadosBuilder != nullptr)
-	{
-		AliadosBuilder->BuildEnfermera();
-		AliadosBuilder->BuildMecanico();
-		AliadosBuilder->BuildArmeria();
-	}
-}
-
 void ADirectorAliadas::SetAliadosBuilder(AActor* Builder)
 {
 	AliadosBuilder = Cast<IAliadosBuilder>(Builder);
 }
-
-void ADirectorAliadas::GetAliados()
+AAliados* ADirectorAliadas::GetAliados()
 {
-		AliadosBuilder->GetAliados();
+	AAliados* Aliados;
+	Aliados=GetWorld()->SpawnActor<AAliados>(AAliados::StaticClass());
+	Aliados->NaveEnfermeraSimple = AliadosBuilder->BuildEnfermeraSimple();
+	Aliados->NaveEnfermeraTotal = AliadosBuilder->BuildEnfermeraTotal();
+	Aliados->NaveArmeriaDoble = AliadosBuilder->BuildArmeriaDoble();
+	Aliados->NaveArmeriaBomerang = AliadosBuilder->BuildArmeriaBomerang();
+	return Aliados;
 }
 
-//AAliados* ADirectorAliadas::Construct(IAliadosBuilder* Builder)
-//{
-//	if (Builder != nullptr)
-//	{
-//		Builder->BuildEnfermera();
-//		Builder->BuildMecanico();
-//		Builder->BuildArmeria();
-//		return Builder->GetAliados();
-//	}
-//	else
-//	return nullptr;
-//}
-//

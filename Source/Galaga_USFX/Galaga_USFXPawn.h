@@ -3,11 +3,12 @@
 #pragma once
 #include "ProjectileBomerang.h"
 #include "CoreMinimal.h"
+#include "IBounce_Ball.h"
 #include "GameFramework/Character.h"
 #include "Galaga_USFXPawn.generated.h"
 
 UCLASS(Blueprintable)
-class AGalaga_USFXPawn : public APawn
+class AGalaga_USFXPawn : public APawn, public IIBounce_Ball
 {
 	GENERATED_BODY()
 
@@ -93,5 +94,11 @@ private:
 	int creditos;
 	bool disparoBomerang;
 
+public:
+	void lanzar() override;
+public:
+	class IIBounce_Ball* bounce_Ball;
+
+	void SetBounceBall(AActor* _Adaptador);
 };
 
