@@ -47,19 +47,24 @@ public:
 	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
 	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
 	int cantidadNavesEnemigas;
+	int Score;
 	void campamento();
 	void nivel();
 	FTimerHandle TimerHandle_Campamento;
 	FTimerHandle TimerHandle_Nivel;
 	FORCEINLINE int GetCantidadNavesEnemigas() { return cantidadNavesEnemigas; }
+	FORCEINLINE int GetScore() { return Score; }
 
 	FORCEINLINE void SetCantidadNavesEnemigas(int _cantidad) { cantidadNavesEnemigas = _cantidad; }
+	FORCEINLINE void SetScore(int _score) { Score = _score; }
 
 	class AAliados* Nivel;
 	class AAliados* Campamento;
 
 private:
 	int TiempoTranscurrido;
+	int cronometro;
+	bool EnemigasActivas;
 
 public:
 	// Called every frame

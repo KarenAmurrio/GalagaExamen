@@ -67,4 +67,5 @@ private:
 	void ReturnToPawn();
 
 	int enemigos;
+	int puntaje;
 };

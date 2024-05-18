@@ -67,5 +67,16 @@ void AGalaga_USFXProjectile::NotifyActorBeginOverlap(AActor* OtherActor)
 		enemigos = GameMode->GetCantidadNavesEnemigas();
 		enemigos--;
 		GameMode->SetCantidadNavesEnemigas(enemigos);
+		puntaje = GameMode->GetScore();
+		puntaje += 10;
+		GameMode->SetScore(puntaje);
+
+		FString mensaje = FString::Printf(TEXT("Tu Puntaje es: %d"), puntaje);
+
+		// Utilizar una clave constante para asegurar que el mensaje anterior se reemplace
+		const int32 MessageKey = 0;  // Puedes elegir cualquier número que desees para el MessageKey
+
+		// Imprimir el mensaje en pantalla, reemplazando cualquier mensaje anterior con la misma clave
+		GEngine->AddOnScreenDebugMessage(MessageKey, 5.f, FColor::Green, mensaje);
 	}
 }

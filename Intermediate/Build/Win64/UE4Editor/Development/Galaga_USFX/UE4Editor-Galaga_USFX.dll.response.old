@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\AdaptadorExtranjero.cpp.obj"
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Aliados.cpp.obj"
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\AliadosBaseBuilder.cpp.obj"
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\AliadosBuilder.cpp.obj"
@@ -62,6 +63,7 @@
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\NaveEnfermeraTotal.cpp.obj"
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\NaveMecanico.cpp.obj"
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\ProjectileBomerang.cpp.obj"
+"E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\AdaptadorExtranjero.gen.cpp.obj"
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Aliados.gen.cpp.obj"
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\AliadosBaseBuilder.gen.cpp.obj"
 "E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\AliadosBuilder.gen.cpp.obj"

@@ -14,6 +14,7 @@
 #include "DirectorAliadas.h"
 #include "Aliados.h"
 #include "AdaptadorExtranjero.h"
+#include "EnemigasFacade.h"
 
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 {
@@ -21,14 +22,15 @@ AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 	PrimaryActorTick.bCanEverTick = true;
 	DefaultPawnClass = AGalaga_USFXPawn::StaticClass();
 	cantidadNavesEnemigas = 8;
+	Score = 0;
+	cronometro = 0;
+	EnemigasActivas = true;
 }
 
 void AGalaga_USFXGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 	//Set the game state to playing
-	FVector ubicacionInicioNavesEnemigasCaza = FVector(500.0f, 10.0f, 200.0f);
-	FVector ubicacionInicioNavesEnemigasTransporte = FVector(500.0f, 500.0f, 250.0f);
 
 
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
@@ -36,14 +38,6 @@ void AGalaga_USFXGameMode::BeginPlay()
 	UWorld* World = GetWorld();
 	if (World != nullptr)
 	{
-	
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 2; j++) {
-				FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X + j * 200, ubicacionInicioNavesEnemigasCaza.Y + i * 300, ubicacionInicioNavesEnemigasCaza.Z);
-				ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
-			}
-		}
-
 
 		TiempoTranscurrido = 0;
 
@@ -51,10 +45,20 @@ void AGalaga_USFXGameMode::BeginPlay()
 		GetWorldTimerManager().SetTimer(TimerHandle_Nivel, this, &AGalaga_USFXGameMode::nivel, 1.0f, true);
 	}
 
+	AEnemigasFacade* facade = GetWorld()->SpawnActor<AEnemigasFacade>(AEnemigasFacade::StaticClass());
 
-	adapter = GetWorld()->SpawnActor<AAdaptadorExtranjero>(AAdaptadorExtranjero::StaticClass(), FVector(0, 0, 0), FRotator(0, 0, 0));
-	jugador->SetBounceBall(adapter);
-	jugador->lanzar();
+	if (Score <=1000)
+	{
+		facade->DesplegarNEFacil();
+	}
+	else if (Score > 1000 && Score <= 2000)
+	{
+		facade->DesplegarNEMedio();
+	}
+	else
+	{
+		facade->DesplegarNEAvanzado();
+	}
 }
 
 void AGalaga_USFXGameMode::campamento()
@@ -87,14 +91,32 @@ void AGalaga_USFXGameMode::nivel()
 void AGalaga_USFXGameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	TiempoTranscurrido++;
-	//FString Message2 = FString::Printf(TEXT("Enemigos: %d"), cantidadNavesEnemigas); // Agregar el formato correcto
-	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, Message2);
-	if(cantidadNavesEnemigas==0)
+
+	if (EnemigasActivas==false)
 	{
 		if (Nivel)
 		{
 			Nivel->destruirAliados();
+			Nivel->Destroy();
 		}
+		TiempoTranscurrido++;
 	}
+	else if (EnemigasActivas == true && cantidadNavesEnemigas > 0)
+	{
+		nivel();
+		EnemigasActivas = false;
+	}
+
+	if ((cronometro + 500) == TiempoTranscurrido)
+	{
+		cronometro += 500;
+		if (Campamento)
+		{
+			Campamento->destruirAliados();
+			Campamento->Destroy();
+		}
+		cantidadNavesEnemigas = 1;
+		EnemigasActivas = true;
+	}
+		
 }

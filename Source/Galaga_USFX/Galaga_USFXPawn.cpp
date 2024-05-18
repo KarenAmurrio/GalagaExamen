@@ -221,12 +221,12 @@ void AGalaga_USFXPawn::lanzar()
 
 void AGalaga_USFXPawn::SetBounceBall(AActor* _Adaptador)
 {
-	bounce_Ball = Cast<IIBounce_Ball>(_Adaptador);
-	if (!bounce_Ball)
+	//bounce_Ball = Cast<IIBounce_Ball>(_Adaptador);
+	/*if (!bounce_Ball)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("No se pudo castear el adaptador"));
 		return;
-	}
+	}*/
 
 
 }
