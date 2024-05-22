@@ -30,4 +30,10 @@ public:
 private:
 	int NEI;
 	int NEJ;
+	int cantidadNavesEnemigas;
+
+public:
+	FORCEINLINE int GetCantidadNavesEnemigas() { return cantidadNavesEnemigas; }
+
+	FORCEINLINE void SetCantidadNavesEnemigas(int _cantidad) { cantidadNavesEnemigas = _cantidad; }
 };

@@ -15,6 +15,7 @@
 #include "Aliados.h"
 #include "AdaptadorExtranjero.h"
 #include "EnemigasFacade.h"
+#include "ArmasFacade.h"
 
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 {
@@ -45,19 +46,28 @@ void AGalaga_USFXGameMode::BeginPlay()
 		GetWorldTimerManager().SetTimer(TimerHandle_Nivel, this, &AGalaga_USFXGameMode::nivel, 1.0f, true);
 	}
 
-	AEnemigasFacade* facade = GetWorld()->SpawnActor<AEnemigasFacade>(AEnemigasFacade::StaticClass());
+	facadeArmas = GetWorld()->SpawnActor<AArmasFacade>(AArmasFacade::StaticClass());
+	facade = GetWorld()->SpawnActor<AEnemigasFacade>(AEnemigasFacade::StaticClass());
 
 	if (Score <=1000)
 	{
-		facade->DesplegarNEFacil();
+		//facade->DesplegarNEFacil();
+		facadeArmas->Metralleta();
+		facadeArmas->Laser();
+		facadeArmas->Bomba();
 	}
 	else if (Score > 1000 && Score <= 2000)
 	{
-		facade->DesplegarNEMedio();
+//		facade->DesplegarNEMedio();
+		facadeArmas->Metralleta();
+		facadeArmas->Laser();
 	}
 	else
 	{
-		facade->DesplegarNEAvanzado();
+//		facade->DesplegarNEAvanzado();
+		facadeArmas->Metralleta();
+		facadeArmas->Laser();
+		facadeArmas->Bomba();
 	}
 }
 
@@ -92,7 +102,7 @@ void AGalaga_USFXGameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (EnemigasActivas==false)
+	if (EnemigasActivas==false && cantidadNavesEnemigas == 0)
 	{
 		if (Nivel)
 		{
@@ -117,6 +127,7 @@ void AGalaga_USFXGameMode::Tick(float DeltaTime)
 		}
 		cantidadNavesEnemigas = 1;
 		EnemigasActivas = true;
+		facade->DesplegarNEFacil();
 	}
-		
+//	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Enemigos %d"), cantidadNavesEnemigas));
 }

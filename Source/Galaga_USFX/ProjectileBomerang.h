@@ -68,4 +68,6 @@ private:
 
 	int enemigos;
 	int puntaje;
+	int enemigos2;
+	int danio;
 };

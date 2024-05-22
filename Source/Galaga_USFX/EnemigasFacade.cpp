@@ -13,6 +13,7 @@ AEnemigasFacade::AEnemigasFacade()
 	PrimaryActorTick.bCanEverTick = true;
 	NEI = 4;
 	NEJ = 2;
+	cantidadNavesEnemigas = NEI*NEJ;
 }
 
 // Called when the game starts or when spawned
@@ -27,20 +28,27 @@ void AEnemigasFacade::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green,FString::Printf(TEXT("Enemigos %d"), cantidadNavesEnemigas));
+
 }
 
 void AEnemigasFacade::DesplegarNEFacil()
 {
-
 		UWorld* World = GetWorld();
 		if (World != nullptr)
 		{
 			for (int i = 0; i < NEI; i++) {
 				for (int j = 0; j < NEJ; j++) {
-				FVector PosicionNaveActual = FVector(500.0f + j * 200, 10.0f + i * 300, 200.0f);
-				ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
+					FVector PosicionNaveActual = FVector(500.0f + j * 200, 10.0f + i * 300, 200.0f);
+					ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
 				}
 			}
+		}
+		if (cantidadNavesEnemigas == 0)
+		{
+			NEI+=2;
+			NEJ+=2;
+			cantidadNavesEnemigas = NEI * NEJ;
 		}
 
 }

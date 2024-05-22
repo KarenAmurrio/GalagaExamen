@@ -5,3 +5,9 @@ E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\N
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaCaza.generated.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileBomerang.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileBomerang.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileMetralleta.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileEnemigo.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileEnemigo.generated.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileMetralleta.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileLaser.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileLaser.generated.h

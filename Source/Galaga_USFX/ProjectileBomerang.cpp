@@ -13,6 +13,9 @@
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Engine/StaticMesh.h"
+#include "Engine/Engine.h"
+#include "EnemigasFacade.h"
+#include "EngineUtils.h"
 // Sets default values
 AProjectileBomerang::AProjectileBomerang()
 {
@@ -32,6 +35,8 @@ AProjectileBomerang::AProjectileBomerang()
     BomerangCollision = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Colision_Bomerang"));
     BomerangCollision->SetupAttachment(RootComponent);
     BomerangCollision->InitCapsuleSize(50.f, 100.f);
+
+    PrimaryActorTick.bCanEverTick = true;
 }
 
 
@@ -49,6 +54,8 @@ void AProjectileBomerang::Tick(float DeltaTime)
     Jugador = Cast<AGalaga_USFXPawn>(UGameplayStatics::GetPlayerPawn(this, 0));
     PosicionRetorno = Jugador->GetActorLocation();
 
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Enemigos %d"), enemigos2));
+
 }
 
 void AProjectileBomerang::NotifyActorBeginOverlap(AActor* OtherActor)
@@ -58,23 +65,46 @@ void AProjectileBomerang::NotifyActorBeginOverlap(AActor* OtherActor)
 
     ANaveEnemigaCaza* EnemyShip = Cast<ANaveEnemigaCaza>(OtherActor);
     AGalaga_USFXGameMode* GameMode = Cast<AGalaga_USFXGameMode>(UGameplayStatics::GetGameMode(this));
+
+    AEnemigasFacade* EnemigasFacade = nullptr;
+
+    for (TActorIterator<AEnemigasFacade> It(GetWorld()); It; ++It)
+    {
+        EnemigasFacade = *It;
+        break;  // Asumiendo que solo hay una instancia de AEnemigasFacade en el nivel
+    }
+
     if (EnemyShip)
     { 
-        EnemyShip->Destroy();
-        enemigos = GameMode->GetCantidadNavesEnemigas();
-        enemigos--;
-        GameMode->SetCantidadNavesEnemigas(enemigos);
-        puntaje = GameMode->GetScore();
-        puntaje += 10;
-        GameMode->SetScore(puntaje);
+        danio++;
+        if(danio==3)
+        {
+            EnemyShip->Destroy();
+            danio = 0;
+            enemigos = GameMode->GetCantidadNavesEnemigas();
+            enemigos--;
+            GameMode->SetCantidadNavesEnemigas(enemigos);
 
-        FString mensaje = FString::Printf(TEXT("Tu Puntaje es: %d"), puntaje);
+            if (EnemigasFacade)
+            {
+                enemigos2 = EnemigasFacade->GetCantidadNavesEnemigas();
+                enemigos2--;
+                EnemigasFacade->SetCantidadNavesEnemigas(enemigos2);
+            }
 
-        // Utilizar una clave constante para asegurar que el mensaje anterior se reemplace
-        const int32 MessageKey = 0;  // Puedes elegir cualquier número que desees para el MessageKey
 
-        // Imprimir el mensaje en pantalla, reemplazando cualquier mensaje anterior con la misma clave
-        GEngine->AddOnScreenDebugMessage(MessageKey, 5.f, FColor::Green, mensaje);
+            puntaje = GameMode->GetScore();
+            puntaje += 10;
+            GameMode->SetScore(puntaje);
+
+            FString mensaje = FString::Printf(TEXT("Tu Puntaje es: %d"), puntaje);
+
+            // Utilizar una clave constante para asegurar que el mensaje anterior se reemplace
+            const int32 MessageKey = 0;  // Puedes elegir cualquier número que desees para el MessageKey
+
+            // Imprimir el mensaje en pantalla, reemplazando cualquier mensaje anterior con la misma clave
+            GEngine->AddOnScreenDebugMessage(MessageKey, 5.f, FColor::Green, mensaje);
+        }
     }
 
 }

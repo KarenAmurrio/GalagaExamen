@@ -38,6 +38,8 @@ public:
 	ADirectorAliadas* DirectorAliadas;
 
 
+
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -75,6 +77,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, Category = "Game Mode")
 	class AGalaga_USFXPawn* jugador;
+
+	class AEnemigasFacade* facade;
+	class AArmasFacade* facadeArmas;
 };
 
 
