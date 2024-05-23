@@ -42,6 +42,9 @@ E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/A
 E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/AliadosCampoBuilder.gen.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/AliadosCampoBuilder.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\AliadosCampoBuilder.generated.h
+E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ArmasFacade.gen.cpp
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/ArmasFacade.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ArmasFacade.generated.h
 E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Ball.gen.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/Ball.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Ball.generated.h
@@ -56,6 +59,7 @@ E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/EnemigasFacade.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EnemigasFacade.generated.h
+E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFX.init.gen.cpp
 E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXGameMode.gen.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/Galaga_USFXGameMode.h
 E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
@@ -97,4 +101,19 @@ E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/N
 E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NaveEnfermeraSimple.gen.cpp
 E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NaveEnfermeraTotal.gen.cpp
 E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NaveMecanico.gen.cpp
+E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ProjectileBomba.gen.cpp
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/ProjectileBomba.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileEnemigo.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileEnemigo.generated.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileBomba.generated.h
 E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ProjectileBomerang.gen.cpp
+E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ProjectileEnemigo.gen.cpp
+E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ProjectileEnemigoBomerang.gen.cpp
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/ProjectileEnemigoBomerang.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileEnemigoBomerang.generated.h
+E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ProjectileLaser.gen.cpp
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/ProjectileLaser.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileLaser.generated.h
+E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ProjectileMetralleta.gen.cpp
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/ProjectileMetralleta.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileMetralleta.generated.h

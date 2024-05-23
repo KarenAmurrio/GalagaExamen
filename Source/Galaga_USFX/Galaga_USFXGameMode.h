@@ -67,6 +67,7 @@ private:
 	int TiempoTranscurrido;
 	int cronometro;
 	bool EnemigasActivas;
+	bool bCampamentoCreado;
 
 public:
 	// Called every frame

@@ -36,4 +36,10 @@ public:
 	FORCEINLINE int GetCantidadNavesEnemigas() { return cantidadNavesEnemigas; }
 
 	FORCEINLINE void SetCantidadNavesEnemigas(int _cantidad) { cantidadNavesEnemigas = _cantidad; }
+
+	int GetNEI() { return NEI; }
+	int GetNEJ() { return NEJ; }
+
+	void SetNEI(int _NEI) { NEI = _NEI; }
+	void SetNEJ(int _NEJ) { NEJ = _NEJ; }
 };

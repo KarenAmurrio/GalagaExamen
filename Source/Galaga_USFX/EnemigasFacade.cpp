@@ -13,7 +13,7 @@ AEnemigasFacade::AEnemigasFacade()
 	PrimaryActorTick.bCanEverTick = true;
 	NEI = 4;
 	NEJ = 2;
-	cantidadNavesEnemigas = NEI*NEJ;
+	cantidadNavesEnemigas = NEI * NEJ;
 }
 
 // Called when the game starts or when spawned
@@ -21,19 +21,21 @@ void AEnemigasFacade::BeginPlay()
 {
 	Super::BeginPlay();
 	
+
 }
 
 // Called every frame
 void AEnemigasFacade::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green,FString::Printf(TEXT("Enemigos %d"), cantidadNavesEnemigas));
 
 }
 
 void AEnemigasFacade::DesplegarNEFacil()
 {
+
 		UWorld* World = GetWorld();
 		if (World != nullptr)
 		{
@@ -44,13 +46,7 @@ void AEnemigasFacade::DesplegarNEFacil()
 				}
 			}
 		}
-		if (cantidadNavesEnemigas == 0)
-		{
-			NEI+=2;
-			NEJ+=2;
-			cantidadNavesEnemigas = NEI * NEJ;
-		}
-
+		cantidadNavesEnemigas = NEI * NEJ;
 }
 
 void AEnemigasFacade::DesplegarNEMedio()
