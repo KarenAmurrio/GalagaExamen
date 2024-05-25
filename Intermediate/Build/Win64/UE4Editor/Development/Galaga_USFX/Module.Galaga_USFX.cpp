@@ -29,7 +29,6 @@
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveMecanico.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileBomba.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileBomerang.cpp"
-#include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileEnemigo.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileEnemigoBomerang.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileLaser.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileMetralleta.cpp"

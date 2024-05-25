@@ -8,7 +8,6 @@
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/Ball.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/DirectorAliadas.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/DirectorNave.cpp"
-#include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/EnemigasFacade.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/Galaga_USFX.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/Galaga_USFXPawn.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/Galaga_USFXProjectile.cpp"

@@ -146,7 +146,6 @@ E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveEnfermeraTotal.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveMecanico.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileBomba.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileBomerang.cpp
-E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileEnemigo.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileEnemigoBomerang.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileEnemigoBomerang.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileEnemigoBomerang.generated.h

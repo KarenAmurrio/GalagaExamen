@@ -6,6 +6,11 @@
 #include "GameFramework/Actor.h"
 #include "NaveEnemiga.h"
 #include "EnemigasFacade.generated.h"
+
+class AAliadosBaseBuilder;
+class ADirectorAliadas;
+class AAliadosCampoBuilder;
+
 UCLASS()
 class GALAGA_USFX_API AEnemigasFacade : public AActor
 {
@@ -42,4 +47,20 @@ public:
 
 	void SetNEI(int _NEI) { NEI = _NEI; }
 	void SetNEJ(int _NEJ) { NEJ = _NEJ; }
+
+	bool bCampamentoCreado;
+	int TiempoTranscurrido;
+	int cronometro;
+	bool EnemigasActivas;
+	int dificultad;
+
+	AAliadosBaseBuilder* AliadosBaseBuilder;
+	AAliadosCampoBuilder* AliadosCampoBuilder;
+	ADirectorAliadas* DirectorAliadas;
+
+	class AAliados* Nivel;
+	class AAliados* Campamento;
+
+	void campamento();
+	void nivel();
 };

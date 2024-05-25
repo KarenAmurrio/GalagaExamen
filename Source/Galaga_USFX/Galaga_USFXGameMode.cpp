@@ -28,7 +28,7 @@ AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 	EnemigasActivas = true;
 
 	bCampamentoCreado = false;
-
+	DificultadActual = 0;
 }
 
 void AGalaga_USFXGameMode::BeginPlay()
@@ -44,61 +44,11 @@ void AGalaga_USFXGameMode::BeginPlay()
 	{
 
 		TiempoTranscurrido = 0;
-
-//		GetWorldTimerManager().SetTimer(TimerHandle_Campamento, this, &AGalaga_USFXGameMode::campamento, 1.0f, true);
-//		GetWorldTimerManager().SetTimer(TimerHandle_Nivel, this, &AGalaga_USFXGameMode::nivel, 1.0f, true);
 	}
 
 	facadeArmas = GetWorld()->SpawnActor<AArmasFacade>(AArmasFacade::StaticClass());
 	facade = GetWorld()->SpawnActor<AEnemigasFacade>(AEnemigasFacade::StaticClass());
 
-	if (Score <=1000)
-	{
-		facade->DesplegarNEFacil();
-		//facadeArmas->Metralleta();
-		//facadeArmas->Laser();
-		//facadeArmas->Bomba();
-	}
-	else if (Score > 1000 && Score <= 2000)
-	{
-		facade->DesplegarNEMedio();
-		/*facadeArmas->Metralleta();
-		facadeArmas->Laser();*/
-	}
-	else
-	{
-		facade->DesplegarNEAvanzado();
-		//facadeArmas->Metralleta();
-		//facadeArmas->Laser();
-		//facadeArmas->Bomba();
-	}
-}
-
-void AGalaga_USFXGameMode::campamento()
-{
-	if (!bCampamentoCreado && cantidadNavesEnemigas == 0)
-	{
-		DirectorAliadas = GetWorld()->SpawnActor<ADirectorAliadas>(ADirectorAliadas::StaticClass());
-		AliadosBaseBuilder = GetWorld()->SpawnActor<AAliadosBaseBuilder>(AAliadosBaseBuilder::StaticClass());
-		DirectorAliadas->SetAliadosBuilder(AliadosBaseBuilder);
-		Campamento = DirectorAliadas->GetAliados();
-//		GetWorldTimerManager().ClearTimer(TimerHandle_Campamento);
-
-		// Marca el campamento como creado
-		bCampamentoCreado = true;
-	}
-}
-
-void AGalaga_USFXGameMode::nivel()
-{
-	if (cantidadNavesEnemigas > 0)
-	{
-		DirectorAliadas = GetWorld()->SpawnActor<ADirectorAliadas>(ADirectorAliadas::StaticClass());
-		AliadosCampoBuilder = GetWorld()->SpawnActor<AAliadosCampoBuilder>(AAliadosCampoBuilder::StaticClass());
-		DirectorAliadas->SetAliadosBuilder(AliadosCampoBuilder);
-		Nivel = DirectorAliadas->GetAliados();
-//		GetWorldTimerManager().ClearTimer(TimerHandle_Nivel);
-	}
 }
 
 void AGalaga_USFXGameMode::Tick(float DeltaTime)
@@ -106,43 +56,37 @@ void AGalaga_USFXGameMode::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 
-	cantidadNavesEnemigas = facade->GetCantidadNavesEnemigas();
-	if (EnemigasActivas == false && cantidadNavesEnemigas == 0)
+	int NuevaDificultad = 0;
+
+	if (Score < 400)
 	{
-		if (Nivel)
-		{
-			Nivel->destruirAliados();
-			Nivel->Destroy();
-			campamento();
-		}
-		TiempoTranscurrido++;
-		// EnemigasActivas = true;
+		NuevaDificultad = 1;
 	}
-	else if (EnemigasActivas == true && cantidadNavesEnemigas > 0)
+	else if (Score >= 400 && Score < 600)
 	{
-		nivel();
-		EnemigasActivas = false;
+		NuevaDificultad = 2;
+	}
+	else
+	{
+		NuevaDificultad = 3;
 	}
 
-	if ((cronometro + 500) == TiempoTranscurrido)
+	if (NuevaDificultad != DificultadActual)
 	{
-		cronometro=0;
-		TiempoTranscurrido = 0;
-		if (Campamento)
-		{
-			Campamento->destruirAliados();
-			Campamento->Destroy();
-		}
+		DificultadActual = NuevaDificultad;
 
-		facade->SetNEI(facade->GetNEI()+2);
-		facade->SetNEJ(facade->GetNEJ()+2);
-		//cantidadNavesEnemigas = facade->GetNEI()*facade->GetNEJ();
-		//cantidadNavesEnemigas = 1;
-		//EnemigasActivas = true;
-		facade->DesplegarNEFacil();
-		EnemigasActivas = true;
-		bCampamentoCreado = false;
+		switch (DificultadActual)
+		{
+		case 1:
+			facade->DesplegarNEFacil();
+			break;
+		case 2:
+			facade->DesplegarNEMedio();
+			break;
+		case 3:
+			facade->DesplegarNEAvanzado();
+			break;
+		}
 	}
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Enemigos %d"), cantidadNavesEnemigas));
-//	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Enemigos %d"), TiempoTranscurrido));
+
 }

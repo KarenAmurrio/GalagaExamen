@@ -50,8 +50,6 @@ public:
 	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
 	int cantidadNavesEnemigas;
 	int Score;
-	void campamento();
-	void nivel();
 	FTimerHandle TimerHandle_Campamento;
 	FTimerHandle TimerHandle_Nivel;
 	FORCEINLINE int GetCantidadNavesEnemigas() { return cantidadNavesEnemigas; }
@@ -68,6 +66,7 @@ private:
 	int cronometro;
 	bool EnemigasActivas;
 	bool bCampamentoCreado;
+	int DificultadActual;
 
 public:
 	// Called every frame

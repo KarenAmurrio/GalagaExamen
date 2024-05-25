@@ -9,7 +9,7 @@
 #include "E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/DirectorAliadas.gen.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/DirectorNave.gen.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/EnemigasFacade.gen.cpp"
-#include "E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFX.init.gen.cpp"
+#include "E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/EscudoEnemigo.gen.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXGameMode.gen.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXPawn.gen.cpp"
 #include "E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXProjectile.gen.cpp"

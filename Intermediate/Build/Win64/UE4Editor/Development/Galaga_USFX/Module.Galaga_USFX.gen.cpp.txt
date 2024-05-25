@@ -59,7 +59,9 @@ E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/EnemigasFacade.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EnemigasFacade.generated.h
-E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFX.init.gen.cpp
+E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/EscudoEnemigo.gen.cpp
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/EscudoEnemigo.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EscudoEnemigo.generated.h
 E:/JuegosEngine/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXGameMode.gen.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX/Galaga_USFXGameMode.h
 E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h

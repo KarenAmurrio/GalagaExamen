@@ -12,7 +12,7 @@ AProjectileEnemigo::AProjectileEnemigo()
 	mallaProjectile->SetupAttachment(RootComponent);
 	RootComponent = mallaProjectile;
 
-	InitialLifeSpan = 3.0f;
+	InitialLifeSpan = 2.0f;
 	velocidad = 3000;
 	danio = 10;
 }
