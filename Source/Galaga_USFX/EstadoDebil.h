@@ -3,12 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "NaveNodrizaState.h"
 #include "GameFramework/Actor.h"
+#include "EstadosNaveNodriza.h"
 #include "EstadoDebil.generated.h"
 
 UCLASS()
-class GALAGA_USFX_API AEstadoDebil : public AActor, public INaveNodrizaState
+class GALAGA_USFX_API AEstadoDebil : public AActor, public IEstadosNaveNodriza
 {
 	GENERATED_BODY()
 	
@@ -24,10 +24,15 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	virtual void EstadoOfencivo() override;
-	virtual void EstadoDefensivo() override;
-	virtual void EstadoDebil() override;
+protected:
+	class ANaveEnemigaNodriza* NaveNodriza;
 
-	virtual void SetNaveNodriza(class ANaveNodriza* NaveNodriza) override;
+	float velocidad;
+public:
+	void SetNaveNodriza(class ANaveEnemigaNodriza* _NaveNodriza) override;
+	void Mover(float DeltaTime) override;
 
+private:
+	void Disparar() override {};
+	void CrearEscudo() override {};
 };

@@ -1,6 +1,8 @@
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaCaza.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\Suscriptor.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Suscriptor.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaCaza.generated.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileBomerang.h
@@ -11,3 +13,8 @@ E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\P
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileMetralleta.generated.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileLaser.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileLaser.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaPublisher.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaPublisher.generated.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Public\EngineUtils.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EnemigasFacade.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EnemigasFacade.generated.h

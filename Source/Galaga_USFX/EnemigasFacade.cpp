@@ -12,7 +12,9 @@
 #include "AliadosBaseBuilder.h"
 #include "AliadosCampoBuilder.h"
 #include "DirectorAliadas.h"
+#include "NaveEnemigaPublisher.h"
 #include "Aliados.h"
+#include "NaveEnemigaNodriza.h"
 
 // Sets default values
 AEnemigasFacade::AEnemigasFacade()
@@ -92,14 +94,18 @@ void AEnemigasFacade::DesplegarNEFacil()
 {
 	NEI = 4;
 	NEJ = 2;
-	cantidadNavesEnemigas = NEI * NEJ;
+	cantidadNavesEnemigas = NEI * NEJ *2;
 	UWorld* World = GetWorld();
 	if (World != nullptr)
 	{
+		FVector PosicionNaveActual = FVector(600.0f, 250.0f, 200.0f);
+		ANaveEnemigaPublisher* NuevaNavePublisher = GetWorld()->SpawnActor<ANaveEnemigaPublisher>(ANaveEnemigaPublisher::StaticClass(), PosicionNaveActual, FRotator::ZeroRotator);
 		for (int i = 0; i < NEI; i++) {
 			for (int j = 0; j < NEJ; j++) {
-				FVector PosicionNaveActual = FVector(270.0f + j * 200, -660.0f + i * 600, 200.0f);
+
+				PosicionNaveActual = FVector(270.0f + j * 200, -660.0f + i * 600, 200.0f);
 				ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
+				NuevaNaveCaza->SetCanMove(true);
 				NuevaNaveCaza->SetFireRate(0.3f);
 				AProjectileMetralleta* Projectile = nullptr;
 				if (ANaveEnemigaCaza* NaveCaza = Cast<ANaveEnemigaCaza>(NuevaNaveCaza))
@@ -108,7 +114,26 @@ void AEnemigasFacade::DesplegarNEFacil()
 				}
 			}
 		}
+
+		for (int i = 0; i < NEI; i++) {
+			for (int j = 0; j < NEJ; j++) {
+
+				PosicionNaveActual = FVector(1690.0f + j * 200, -660.0f + i * 600, 200.0f);
+				ANaveEnemiga* NaveCazaRespaldo = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
+				NaveCazaRespaldo->SetFireRate(0.3f);
+				NaveCazaRespaldo->SetCanFire(false);
+				AProjectileMetralleta* Projectile = nullptr;
+				if (ANaveEnemigaCaza* NaveCaza = Cast<ANaveEnemigaCaza>(NaveCazaRespaldo))
+				{
+					NaveCaza->NewProjectile = AProjectileMetralleta::StaticClass();
+				}
+				NuevaNavePublisher->Suscribir(NaveCazaRespaldo);
+			}
+		}
 	}
+
+
+
 	dificultad = 1;
 }
 
@@ -116,15 +141,20 @@ void AEnemigasFacade::DesplegarNEMedio()
 {
 	NEI = 4;
 	NEJ = 2;
-	cantidadNavesEnemigas = NEI * NEJ + 2;
+	cantidadNavesEnemigas = NEI * NEJ;
 	UWorld* World = GetWorld();
 	if (World != nullptr)
 	{
+
+		FVector PosicionNaveActual = FVector(600.0f, 250.0f, 200.0f);
+		ANaveEnemigaNodriza* NuevaNaveNodriza = GetWorld()->SpawnActor<ANaveEnemigaNodriza>(ANaveEnemigaNodriza::StaticClass(), PosicionNaveActual, FRotator::ZeroRotator);
+		NuevaNaveNodriza->InicializarEstadosNaveNodriza();
+
 		for (int i = 0; i < NEI; i++) {
 			for (int j = 0; j < NEJ; j++) {
-				FVector PosicionNaveActual = FVector(270.0f + j * 200, -660.0f + i * 600, 200.0f);
+				PosicionNaveActual = FVector(270.0f + j * 200, -660.0f + i * 600, 200.0f);
 				ANaveEnemiga* NuevaNaveCaza2 = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
-				if(!NuevaNaveCaza2)
+				if (!NuevaNaveCaza2)
 				{
 					GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("NaveCaza no existe")));
 					return;
@@ -138,26 +168,60 @@ void AEnemigasFacade::DesplegarNEMedio()
 			}
 		}
 	}
-	if (World != nullptr)
-	{
-		for (int i = 0; i < 2; i++) {
-			FVector PosicionNaveActual = FVector(1000.0f, -510.0f + i * 800, 200.0f);
-			ANaveEnemiga* NuevaNaveCaza3 = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
-			NuevaNaveCaza3->SetFireRate(0.1f);
-			if (!NuevaNaveCaza3)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("NaveCaza no existe")));
-				return;
-			}
-			if (ANaveEnemigaCaza* NaveCaza = Cast<ANaveEnemigaCaza>(NuevaNaveCaza3))
-			{
-				NaveCaza->NewProjectile = AProjectileLaser::StaticClass();
-			}
-		}
-	}
+
+
 
 	dificultad = 2;
 }
+
+//MEDIOANTIGUO
+
+//void AEnemigasFacade::DesplegarNEMedio()
+//{
+//	NEI = 4;
+//	NEJ = 2;
+//	cantidadNavesEnemigas = NEI * NEJ + 2;
+//	UWorld* World = GetWorld();
+//	if (World != nullptr)
+//	{
+//		for (int i = 0; i < NEI; i++) {
+//			for (int j = 0; j < NEJ; j++) {
+//				FVector PosicionNaveActual = FVector(270.0f + j * 200, -660.0f + i * 600, 200.0f);
+//				ANaveEnemiga* NuevaNaveCaza2 = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
+//				if(!NuevaNaveCaza2)
+//				{
+//					GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("NaveCaza no existe")));
+//					return;
+//				}
+//				NuevaNaveCaza2->SetFireRate(0.3f);
+//				AProjectileMetralleta* Projectile = nullptr;
+//				if (ANaveEnemigaCaza* NaveCaza = Cast<ANaveEnemigaCaza>(NuevaNaveCaza2))
+//				{
+//					NaveCaza->NewProjectile = AProjectileMetralleta::StaticClass();
+//				}
+//			}
+//		}
+//	}
+//	if (World != nullptr)
+//	{
+//		for (int i = 0; i < 2; i++) {
+//			FVector PosicionNaveActual = FVector(1000.0f, -510.0f + i * 800, 200.0f);
+//			ANaveEnemiga* NuevaNaveCaza3 = ANaveEnemigaCazaFactory::DesplegarNave("CazaComun", World, PosicionNaveActual, FRotator::ZeroRotator);
+//			NuevaNaveCaza3->SetFireRate(0.1f);
+//			if (!NuevaNaveCaza3)
+//			{
+//				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("NaveCaza no existe")));
+//				return;
+//			}
+//			if (ANaveEnemigaCaza* NaveCaza = Cast<ANaveEnemigaCaza>(NuevaNaveCaza3))
+//			{
+//				NaveCaza->NewProjectile = AProjectileLaser::StaticClass();
+//			}
+//		}
+//	}
+//
+//	dificultad = 2;
+//}
 
 
 void AEnemigasFacade::DesplegarNEAvanzado()

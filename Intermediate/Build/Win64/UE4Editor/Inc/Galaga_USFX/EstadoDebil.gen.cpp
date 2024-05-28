@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeEstadoDebil() {}
 	GALAGA_USFX_API UClass* Z_Construct_UClass_AEstadoDebil();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX();
-	GALAGA_USFX_API UClass* Z_Construct_UClass_UNaveNodrizaState_NoRegister();
+	GALAGA_USFX_API UClass* Z_Construct_UClass_UEstadosNaveNodriza_NoRegister();
 // End Cross Module References
 	void AEstadoDebil::StaticRegisterNativesAEstadoDebil()
 	{
@@ -47,7 +47,7 @@ void EmptyLinkFunctionForGeneratedCodeEstadoDebil() {}
 	};
 #endif
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AEstadoDebil_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UNaveNodrizaState_NoRegister, (int32)VTABLE_OFFSET(AEstadoDebil, INaveNodrizaState), false },
+			{ Z_Construct_UClass_UEstadosNaveNodriza_NoRegister, (int32)VTABLE_OFFSET(AEstadoDebil, IEstadosNaveNodriza), false },
 		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEstadoDebil_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEstadoDebil>::IsAbstract,
@@ -76,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeEstadoDebil() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEstadoDebil, 3796265615);
+	IMPLEMENT_CLASS(AEstadoDebil, 4176553314);
 	template<> GALAGA_USFX_API UClass* StaticClass<AEstadoDebil>()
 	{
 		return AEstadoDebil::StaticClass();

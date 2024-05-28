@@ -6,6 +6,9 @@
 #include "ProjectileMetralleta.h"
 #include "Engine/World.h"
 #include "ProjectileLaser.h"
+#include "NaveEnemigaPublisher.h"
+#include "EngineUtils.h"
+#include "EnemigasFacade.h"
 
 
 ANaveEnemigaCaza::ANaveEnemigaCaza()
@@ -15,6 +18,8 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 	FireRate = 0;
 	bCanFire = true;
 	NewProjectile = nullptr;
+	Vida = 10;
+	bCanMove = false;
 
 }
 
@@ -48,9 +53,11 @@ void ANaveEnemigaCaza::Mover(float DeltaTime)
 	//	}
 
 	//}
-
-	velocidad = 2.0; //0.75
-	SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
+	if(bCanMove == true)
+	{
+		velocidad = 2.0; //0.75
+		SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
+	}
 }
 
 void ANaveEnemigaCaza::Disparar()
@@ -62,6 +69,14 @@ void ANaveEnemigaCaza::Disparar()
 		GetWorld()->SpawnActor<AProjectileEnemigo>(NewProjectile, SpawnLocation, FRotator::ZeroRotator);
 		bCanFire = false;
 	}
+}
+
+void ANaveEnemigaCaza::ReiniciarEstado()
+{
+	bCanFire = false;
+	bCanMove = false;
+	Vida = 10; // Reiniciar la vida de la nave a su valor inicial
+	GetWorld()->GetTimerManager().ClearTimer(TimerHandle_ShotTimerExpired);
 }
 
 void ANaveEnemigaCaza::Tick(float DeltaTime)
@@ -79,6 +94,41 @@ void ANaveEnemigaCaza::FuncionDeManejoDeColision(UPrimitiveComponent* HitCompone
 	{
 		// Destruir la nave enemiga
 		Destroy();
-
+		
 	}
+}
+
+void ANaveEnemigaCaza::RecibirDanio()
+{
+	Vida -= 5;
+	if (Vida <= 0)
+	{
+		Destroy();
+
+		AEnemigasFacade* EnemigasFacade = nullptr;
+
+		for (TActorIterator<AEnemigasFacade> It(GetWorld()); It; ++It)
+		{
+			EnemigasFacade = *It;
+			break;  // Asumiendo que solo hay una instancia de AEnemigasFacade en el nivel
+		}
+		EnemigasFacade->SetCantidadNavesEnemigas(EnemigasFacade->GetCantidadNavesEnemigas() - 1);
+	}
+}
+
+void ANaveEnemigaCaza::Actualizar()
+{
+	if(bCanMove == false && bCanFire==false)
+	{
+		bCanMove = true;
+		bCanFire = true;
+	}
+
+	ANaveEnemigaPublisher* Publisher = nullptr;
+	for (TActorIterator<ANaveEnemigaPublisher> It(GetWorld()); It; ++It)
+	{
+		Publisher = *It;
+		break;  // Asumiendo que solo hay una instancia de ANaveEnemigaPublisher en el nivel
+	}
+	Publisher->Desuscribir(this);
 }

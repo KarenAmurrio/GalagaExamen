@@ -18,6 +18,7 @@ public:
 	ANaveEnemigaReabastecimiento();
 	void ReabastecerNaves();
 	void ReabastecerVida();
+	void Matate();
 
 	virtual void Tick(float DeltaTime) override;
 };

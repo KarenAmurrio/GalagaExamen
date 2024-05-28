@@ -3,11 +3,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Suscriptor.h"
 #include "NaveEnemiga.generated.h"
 
 
 UCLASS(abstract)
-class GALAGA_USFX_API ANaveEnemiga : public AActor
+class GALAGA_USFX_API ANaveEnemiga : public AActor, public ISuscriptor
 
 {
 	GENERATED_BODY()
@@ -21,7 +22,9 @@ protected:
 	float velocidad;
 	float resistencia; //Numero de disparos que puede recibir antes de ser destruido
 	FVector posicion;
-
+	int vida;
+	bool bCanMove;
+	bool bCanFire;
 
 	float FireRate;
 
@@ -35,7 +38,8 @@ public:
 	FORCEINLINE void SetResistencia(float _resistencia) { resistencia = _resistencia; }
 	FORCEINLINE void SetPosicion(FVector _posicion) { posicion = _posicion; }
 
-
+	FORCEINLINE bool GetCanMove() const { return bCanMove; }
+	FORCEINLINE void SetCanMove(bool _bCanMove) { bCanMove = _bCanMove; }
 
 	//FORCEINLINE AProjectileEnemigo* GetProjectile() const { return NewProjectile; }
 	//FORCEINLINE void SetProjectile(AProjectileEnemigo* Projectile) { NewProjectile = Projectile; }
@@ -45,6 +49,9 @@ public:
 
 //	class AProjectileEnemigo* NewProjectile;
 	//TSubclassOf<class AProjectileEnemigo> NewProjectile;
+
+	FORCEINLINE bool GetCanFire() const { return bCanFire; }
+	FORCEINLINE void SetCanFire(bool _bCanFire) { bCanFire = _bCanFire; }
 	
 public:	
 	// Sets default values for this actor's properties
@@ -61,6 +68,12 @@ public:
 
 	protected:
 	//virtual void Mover() = 0;
-	void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover, );
-	void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
+	virtual void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover, );
+	virtual void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
+	virtual void ReiniciarEstado()PURE_VIRTUAL(ANaveEnemiga::ReiniciarEstado, );
+
+public:
+	virtual void Actualizar() override;
+
 };
+

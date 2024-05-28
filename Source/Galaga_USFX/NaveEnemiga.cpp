@@ -24,4 +24,8 @@ void ANaveEnemiga::Tick(float DeltaTime)
 
 }
 
+void ANaveEnemiga::Actualizar()
+{
+}
+
 

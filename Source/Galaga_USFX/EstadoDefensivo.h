@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "EstadosNaveNodriza.h"
 #include "EstadoDefensivo.generated.h"
 
 UCLASS()
-class GALAGA_USFX_API AEstadoDefensivo : public AActor
+class GALAGA_USFX_API AEstadoDefensivo : public AActor, public IEstadosNaveNodriza
 {
 	GENERATED_BODY()
 	
@@ -23,4 +24,23 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+protected:
+	class ANaveEnemigaNodriza* NaveNodriza;
+
+	virtual void ResetFire();
+
+	int MaxProjectile;
+
+	int NumberFired;
+	bool bCanFire;
+
+	FVector UltimaPosicionJugador;
+
+public:
+	void SetNaveNodriza(class ANaveEnemigaNodriza* _NaveNodriza) override;
+	void Disparar() override;
+	void CrearEscudo() override;
+
+private:
+	void Mover(float DeltaTime) override {};
 };

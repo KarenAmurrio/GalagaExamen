@@ -48,6 +48,8 @@ E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\A
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaCazaFactory.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaFactory.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\Suscriptor.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Suscriptor.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaFactory.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaCazaFactory.generated.h
@@ -116,10 +118,6 @@ E:\Unreal\UE_4.27\Engine\Source\Runtime\SlateCore\Public\Fonts/FontProviderInter
 E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SlateCore\FontProviderInterface.generated.h
 E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Font.generated.h
 E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Canvas.generated.h
-E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/Galaga_USFXProjectile.cpp
-E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EnemigasFacade.h
-E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EnemigasFacade.generated.h
-E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Public\EngineUtils.h
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/IBounce_Ball.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveAliada.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveAliada.h
@@ -130,8 +128,6 @@ E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveArmeriaDoble.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveArmeriaTriple.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveArmeriaTriple.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveArmeriaTriple.generated.h
-E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveEnemiga.cpp
-E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveEnemigaCaza.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveEnemigaCazaFactory.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaTransporte.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaTransporte.generated.h
@@ -146,6 +142,9 @@ E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveEnfermeraTotal.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/NaveMecanico.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileBomba.cpp
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileBomerang.cpp
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EnemigasFacade.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EnemigasFacade.generated.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Public\EngineUtils.h
 E:/JuegosEngine/Galaga_USFX/Source/Galaga_USFX/ProjectileEnemigoBomerang.cpp
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\ProjectileEnemigoBomerang.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjectileEnemigoBomerang.generated.h

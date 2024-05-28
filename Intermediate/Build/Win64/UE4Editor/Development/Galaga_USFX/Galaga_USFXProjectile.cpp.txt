@@ -11,6 +11,8 @@ E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComp
 E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CapsuleComponent.generated.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaCaza.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\Suscriptor.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Suscriptor.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaCaza.generated.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\Galaga_USFXGameMode.h
@@ -22,3 +24,11 @@ E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\G
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EnemigasFacade.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EnemigasFacade.generated.h
 E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Public\EngineUtils.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EscudoEnemigo.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EscudoEnemigo.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaNodriza.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaNodriza.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaReabastecimiento.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaReabastecimiento.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaPublisher.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaPublisher.generated.h

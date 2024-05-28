@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B1D45FE8-07DB-4CE3-B2CB-496E3225B365}</UniqueIdentifier>
+      <UniqueIdentifier>{1C69EFA5-9BD7-4DD3-AB27-3177EC06EF03}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\Facade_GalagaGL01.zip" />
     <Filter Include="Config">
-      <UniqueIdentifier>{FA300719-EF01-454C-98FE-6052499D3BD1}</UniqueIdentifier>
+      <UniqueIdentifier>{2F4750BF-8E0B-4904-B925-60038B1C3C60}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX">
-      <UniqueIdentifier>{0BE7F5BF-06C2-4B5B-AC2F-548D77666B51}</UniqueIdentifier>
+      <UniqueIdentifier>{1ABA9BC6-9403-4CFB-903A-31C87E3E69D3}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX\AdaptadorExtranjero.cpp">
       <Filter>Source\Galaga_USFX</Filter>
@@ -113,10 +113,16 @@
     <ClInclude Include="..\..\Source\Galaga_USFX\EstadoDefensivo.h">
       <Filter>Source\Galaga_USFX</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Galaga_USFX\EstadoOfencivo.cpp">
+    <ClCompile Include="..\..\Source\Galaga_USFX\EstadoOfensivo.cpp">
       <Filter>Source\Galaga_USFX</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Galaga_USFX\EstadoOfencivo.h">
+    <ClInclude Include="..\..\Source\Galaga_USFX\EstadoOfensivo.h">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX\EstadosNaveNodriza.cpp">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\EstadosNaveNodriza.h">
       <Filter>Source\Galaga_USFX</Filter>
     </ClInclude>
     <None Include="..\..\Source\Galaga_USFX\Galaga_USFX.Build.cs">
@@ -212,6 +218,12 @@
     <ClInclude Include="..\..\Source\Galaga_USFX\NaveEnemigaNodriza.h">
       <Filter>Source\Galaga_USFX</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX\NaveEnemigaPublisher.cpp">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\NaveEnemigaPublisher.h">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX\NaveEnemigaReabastecimiento.cpp">
       <Filter>Source\Galaga_USFX</Filter>
     </ClCompile>
@@ -254,12 +266,6 @@
     <ClInclude Include="..\..\Source\Galaga_USFX\NaveMecanico.h">
       <Filter>Source\Galaga_USFX</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Galaga_USFX\NaveNodrizaState.cpp">
-      <Filter>Source\Galaga_USFX</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Galaga_USFX\NaveNodrizaState.h">
-      <Filter>Source\Galaga_USFX</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX\ProjectileBomba.cpp">
       <Filter>Source\Galaga_USFX</Filter>
     </ClCompile>
@@ -294,6 +300,12 @@
       <Filter>Source\Galaga_USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX\ProjectileMetralleta.h">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX\Suscriptor.cpp">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\Suscriptor.h">
       <Filter>Source\Galaga_USFX</Filter>
     </ClInclude>
   </ItemGroup>

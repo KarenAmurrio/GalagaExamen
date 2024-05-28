@@ -1,5 +1,15 @@
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaNodriza.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\Suscriptor.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Suscriptor.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaNodriza.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EstadosNaveNodriza.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EstadosNaveNodriza.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EstadoDefensivo.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EstadoDefensivo.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EstadoOfensivo.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EstadoOfensivo.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EstadoDebil.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EstadoDebil.generated.h

@@ -48,7 +48,8 @@ void AGalaga_USFXGameMode::BeginPlay()
 
 	facadeArmas = GetWorld()->SpawnActor<AArmasFacade>(AArmasFacade::StaticClass());
 	facade = GetWorld()->SpawnActor<AEnemigasFacade>(AEnemigasFacade::StaticClass());
-
+	facade->DesplegarNEFacil(); //observer
+	//facade->DesplegarNEMedio(); //state
 }
 
 void AGalaga_USFXGameMode::Tick(float DeltaTime)
@@ -56,37 +57,37 @@ void AGalaga_USFXGameMode::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 
-	int NuevaDificultad = 0;
+	//int NuevaDificultad = 0;
 
-	if (Score < 400)
-	{
-		NuevaDificultad = 1;
-	}
-	else if (Score >= 400 && Score < 600)
-	{
-		NuevaDificultad = 2;
-	}
-	else
-	{
-		NuevaDificultad = 3;
-	}
+	//if (Score < 400)
+	//{
+	//	NuevaDificultad = 1;
+	//}
+	//else if (Score >= 400 && Score < 600)
+	//{
+	//	NuevaDificultad = 2;
+	//}
+	//else
+	//{
+	//	NuevaDificultad = 3;
+	//}
 
-	if (NuevaDificultad != DificultadActual)
-	{
-		DificultadActual = NuevaDificultad;
+	//if (NuevaDificultad != DificultadActual)
+	//{
+	//	DificultadActual = NuevaDificultad;
 
-		switch (DificultadActual)
-		{
-		case 1:
-			facade->DesplegarNEFacil();
-			break;
-		case 2:
-			facade->DesplegarNEMedio();
-			break;
-		case 3:
-			facade->DesplegarNEAvanzado();
-			break;
-		}
-	}
-
+	//	switch (DificultadActual)
+	//	{
+	//	case 1:
+	//		facade->DesplegarNEFacil();
+//			break;
+//		case 2:
+//			facade->DesplegarNEMedio();
+//			break;
+//		case 3:
+//			facade->DesplegarNEAvanzado();
+//			break;
+//		}
+//	}
+//
 }

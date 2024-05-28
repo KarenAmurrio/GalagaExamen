@@ -76,8 +76,7 @@ public: \
 
 #define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXProjectile_h_15_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ProjectileMesh() { return STRUCT_OFFSET(AGalaga_USFXProjectile, ProjectileMesh); } \
-	FORCEINLINE static uint32 __PPO__ProjectileMovement() { return STRUCT_OFFSET(AGalaga_USFXProjectile, ProjectileMovement); } \
-	FORCEINLINE static uint32 __PPO__BomerangCollision() { return STRUCT_OFFSET(AGalaga_USFXProjectile, BomerangCollision); }
+	FORCEINLINE static uint32 __PPO__ProjectileMovement() { return STRUCT_OFFSET(AGalaga_USFXProjectile, ProjectileMovement); }
 
 
 #define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXProjectile_h_12_PROLOG

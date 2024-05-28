@@ -1,6 +1,8 @@
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\EnemigasFacade.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\Suscriptor.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Suscriptor.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EnemigasFacade.generated.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaCazaFactory.h
@@ -55,3 +57,7 @@ E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\AliadosCampoBuilder.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\AliadosCampoBuilder.generated.h
 E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\DirectorAliadas.h
 E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\DirectorAliadas.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaPublisher.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaPublisher.generated.h
+E:\JuegosEngine\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaNodriza.h
+E:\JuegosEngine\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaNodriza.generated.h

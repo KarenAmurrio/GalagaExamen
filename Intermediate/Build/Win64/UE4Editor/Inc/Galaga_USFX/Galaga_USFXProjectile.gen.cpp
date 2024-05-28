@@ -23,7 +23,6 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXProjectile() {}
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(AGalaga_USFXProjectile::execOnHit)
 	{
@@ -104,9 +103,9 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXProjectile() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFXProjectile_OnHit_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "/** Function to handle the projectile hitting something */" },
+		{ "Comment", "/** Function to handle the projectile hitting something *///\x09void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);\n" },
 		{ "ModuleRelativePath", "Galaga_USFXProjectile.h" },
-		{ "ToolTip", "Function to handle the projectile hitting something" },
+		{ "ToolTip", "Function to handle the projectile hitting something // void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGalaga_USFXProjectile_OnHit_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGalaga_USFXProjectile, nullptr, "OnHit", nullptr, nullptr, sizeof(Galaga_USFXProjectile_eventOnHit_Parms), Z_Construct_UFunction_AGalaga_USFXProjectile_OnHit_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFXProjectile_OnHit_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00C20401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFXProjectile_OnHit_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFXProjectile_OnHit_Statics::Function_MetaDataParams)) };
@@ -138,10 +137,6 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXProjectile() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileMovement_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ProjectileMovement;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BomerangCollision_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BomerangCollision;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -151,7 +146,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXProjectile() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Galaga_USFX,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGalaga_USFXProjectile_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AGalaga_USFXProjectile_OnHit, "OnHit" }, // 654165562
+		{ &Z_Construct_UFunction_AGalaga_USFXProjectile_OnHit, "OnHit" }, // 1060164531
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFXProjectile_Statics::Class_MetaDataParams[] = {
@@ -181,18 +176,9 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXProjectile() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_ProjectileMovement = { "ProjectileMovement", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFXProjectile, ProjectileMovement), Z_Construct_UClass_UProjectileMovementComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_ProjectileMovement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_ProjectileMovement_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_BomerangCollision_MetaData[] = {
-		{ "Category", "Colision_Bomerang" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Galaga_USFXProjectile.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_BomerangCollision = { "BomerangCollision", nullptr, (EPropertyFlags)0x0040000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFXProjectile, BomerangCollision), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_BomerangCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_BomerangCollision_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGalaga_USFXProjectile_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_ProjectileMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_ProjectileMovement,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXProjectile_Statics::NewProp_BomerangCollision,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFXProjectile_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGalaga_USFXProjectile>::IsAbstract,
@@ -221,7 +207,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXProjectile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFXProjectile, 1049746399);
+	IMPLEMENT_CLASS(AGalaga_USFXProjectile, 3410875608);
 	template<> GALAGA_USFX_API UClass* StaticClass<AGalaga_USFXProjectile>()
 	{
 		return AGalaga_USFXProjectile::StaticClass();

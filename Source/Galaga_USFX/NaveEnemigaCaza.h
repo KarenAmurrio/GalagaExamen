@@ -18,7 +18,7 @@ private:
 	float velocidad;
 	int band = 0;
 	float posicionY;
-	bool bCanFire;
+
 
 
 public:
@@ -33,6 +33,7 @@ public:
 	FORCEINLINE float GetFireRate() const { return FireRate; }
 	FORCEINLINE void SetFireRate(float _FireRate) { FireRate = _FireRate; }
 
+
 	//FORCEINLINE AProjectileEnemigo* GetProjectile() const { return NewProjectile; }
 	//FORCEINLINE void SetProjectile(AProjectileEnemigo* Projectile) { NewProjectile = Projectile; }
 
@@ -42,9 +43,17 @@ public:
 protected:
 	virtual void Mover(float DeltaTime);
 	virtual void Disparar();
+	virtual void ReiniciarEstado();
+
 
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	void FuncionDeManejoDeColision(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+	void RecibirDanio();
+
+	int Vida;
+
+	//observer
+	virtual void Actualizar() override;
 };

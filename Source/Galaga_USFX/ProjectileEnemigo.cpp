@@ -36,4 +36,4 @@ void AProjectileEnemigo::Tick(float DeltaTime)
 //	FVector NewLocation = GetActorLocation() + -GetActorForwardVector() * velocidad * GetWorld()->GetDeltaSeconds();
 //	SetActorLocation(NewLocation);
 //}
-
+//
